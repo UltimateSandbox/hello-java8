@@ -4,6 +4,7 @@ import java.math.BigInteger;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
@@ -29,22 +30,6 @@ public class HelloLambda {
     Supplier<Integer> supplier = () -> value.getAndIncrement();
 
     // Consumer - takes 1 value returns nothing
+    Consumer<String> consumer = s -> System.out.println(s);
 
-
-
-    public static void main(String[] args) {
-
-        List<String> myList =
-                Arrays.asList("a1", "a2", "b1", "c2", "c1");
-
-        myList
-                .stream()
-                .sorted()
-                .filter(x -> x.startsWith("c"))
-                .map(String::toUpperCase)
-                .forEach(System.out::println);
-
-
-
-    }
 }
